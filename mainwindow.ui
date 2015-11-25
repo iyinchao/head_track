@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>484</width>
-    <height>333</height>
+    <width>691</width>
+    <height>465</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,26 +18,45 @@
     <item row="0" column="0">
      <layout class="QGridLayout" name="l_center">
       <item row="0" column="0">
-       <widget class="QPushButton" name="bt_mainCtrl">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
+       <widget class="QPushButton" name="bt_irsCtrl">
         <property name="text">
-         <string>Stopped</string>
+         <string>Start capture</string>
         </property>
         <property name="checkable">
          <bool>true</bool>
         </property>
-        <property name="checked">
-         <bool>false</bool>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QOpenGLWidget" name="openGLWidget"/>
+      </item>
+      <item row="1" column="0" rowspan="2">
+       <widget class="QGroupBox" name="groupBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="title">
+         <string>GroupBox</string>
         </property>
        </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="IRSRenderer2D" name="widget" native="true"/>
       </item>
      </layout>
     </item>
@@ -48,7 +67,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>484</width>
+     <width>691</width>
      <height>23</height>
     </rect>
    </property>
@@ -56,6 +75,14 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>IRSRenderer2D</class>
+   <extends>QWidget</extends>
+   <header>irsrenderer2d.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

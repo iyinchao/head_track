@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui opengl
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,10 +14,14 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    irscontroller.cpp
+    irsmanager.cpp \
+    irsrenderer2d.cpp \
+    irsrenderer3d.cpp
 
 HEADERS  += mainwindow.h \
-    irscontroller.h
+    irsmanager.h \
+    irsrenderer2d.h \
+    irsrenderer3d.h
 
 FORMS    += mainwindow.ui
 
