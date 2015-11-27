@@ -31,7 +31,7 @@ public:
 signals:
     void _error(IRSManager::IRSError errorCode);
     void _stream(bool isStart);
-    void _sampleData(PXCCapture::Sample* sample);
+    void _sampleData(PXCCapture::Sample* sample, PXCFaceData *faceData = 0);
 
 public slots:
     void stop();

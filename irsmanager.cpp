@@ -117,7 +117,7 @@ void IRSManager::run()
 
         faceData->Update();
         PXCCapture::Sample* sample = senseManager->QueryFaceSample();
-        emit _sampleData(sample);
+        emit _sampleData(sample, faceData);
 
         lock.lockForWrite();
         senseManager->ReleaseFrame();

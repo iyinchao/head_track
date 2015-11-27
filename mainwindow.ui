@@ -27,11 +27,8 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QOpenGLWidget" name="openGLWidget"/>
-      </item>
       <item row="1" column="0" rowspan="2">
-       <widget class="QGroupBox" name="groupBox">
+       <widget class="QGroupBox" name="gb_ctrl">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -51,12 +48,67 @@
          </size>
         </property>
         <property name="title">
-         <string>GroupBox</string>
+         <string>Control</string>
         </property>
+        <layout class="QGridLayout" name="gridLayout"/>
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="IRSRenderer2D" name="widget" native="true"/>
+       <widget class="QTabWidget" name="tab_views">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab_3D">
+         <attribute name="title">
+          <string>3D</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QGridLayout" name="l_tab3D"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_2D">
+         <attribute name="title">
+          <string>2D</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QGridLayout" name="l_tab2D"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
       </item>
      </layout>
     </item>
@@ -75,14 +127,6 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>IRSRenderer2D</class>
-   <extends>QWidget</extends>
-   <header>irsrenderer2d.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

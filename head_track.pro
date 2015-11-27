@@ -16,12 +16,18 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     irsmanager.cpp \
     irsrenderer2d.cpp \
-    irsrenderer3d.cpp
+    irsrenderer3d.cpp \
+    render_handler/irshandlerhe.cpp \
+    render_handler/irshandlerbase.cpp \
+    cglutil.cpp
 
 HEADERS  += mainwindow.h \
     irsmanager.h \
     irsrenderer2d.h \
-    irsrenderer3d.h
+    irsrenderer3d.h \
+    render_handler/irshandlerbase.h \
+    render_handler/irshandlerhe.h \
+    cglutil.h
 
 FORMS    += mainwindow.ui
 
@@ -59,6 +65,8 @@ CONFIG(release, debug|release) {
             LIBS += $(RSSDK_DIR)/lib/x64/libpxcmd_d.lib
             LIBS += $(RSSDK_DIR)/sample/common/lib/x64/v120/libpxcutils_d.lib
             LIBS += $(RSSDK_DIR)/sample/common/lib/x64/v120/libpxcutilsmd_d.lib
+            LIBS += "C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x64\GlU32.Lib"
+            LIBS += "C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x64\OpenGL32.Lib"
         }
     }
 }
