@@ -25,6 +25,21 @@ void IRSHandlerBase::addView3D(int id, IRSRenderer3D *view)
     }
 }
 
+PXCPoint3DF32 IRSHandlerBase::convertQtIRS(const QVector3D &qtVector)
+{
+    PXCPoint3DF32 irsVector;
+    irsVector.x = qtVector.x();
+    irsVector.y = qtVector.y();
+    irsVector.z = qtVector.z();
+
+    return irsVector;
+}
+
+QVector3D IRSHandlerBase::convertQtIRS(const PXCPoint3DF32 &irsVector)
+{
+    return QVector3D(irsVector.x, irsVector.y, irsVector.z);
+}
+
 void IRSHandlerBase::paint2D(int targetID, QPainter *painter, QPaintEvent *event)
 {
 

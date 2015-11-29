@@ -3,6 +3,7 @@
 
 #include <QMouseEvent>
 #include <QWheelEvent>
+#include <QPushButton>
 #include "irshandlerbase.h"
 #include "../cglutil.h"
 
@@ -22,6 +23,9 @@ public slots:
     void mouseRelease3D(int targetID, QMouseEvent *event);
     void mouseWheel3D(int targetID, QWheelEvent *event);
     void h_mgrSampleData(PXCCapture::Sample* sample, PXCFaceData *faceData = 0);
+    void h_btFPV_(bool checked);
+    void h_btSideView_();
+    void h_btTopView_();
 
 private:
     PXCCapture::Sample* sample;
@@ -29,6 +33,8 @@ private:
     PXCImage::ImageData colorData;
     PXCImage *colorImage;
     PXCFaceData *faceData;
+    PXCSmoother::Smoother3D *smootherHPos;
+    PXCSmoother::Smoother3D *smootherHRot;
 
     QPoint v_lastPos;
     bool isMouseDown;
@@ -40,10 +46,17 @@ private:
     double v_r;
     double v_r_max;
     double v_r_min;
-
+    bool isFPV;
+    bool isNoValidBefore;
+    QVector3D irsPos;
+    QVector3D targetPos;
     QVector3D v_t_up;
     QVector3D v_t_center;
     QVector3D v_t_eye;
+
+    QPushButton *btFPV;
+    QPushButton *btTopView;
+    QPushButton *btSideView;
 };
 
 #endif // IRSHANDLERHE_H

@@ -3,6 +3,7 @@
 
 #include <QThread>
 #include <pxcsensemanager.h>
+#include <utilities/pxcsmoother.h>
 #include <QReadWriteLock>
 
 #include <QDebug>
@@ -26,6 +27,7 @@ public:
 
     static IRSManager& getInstance();
     PXCSenseManager *getSenseManager();
+    PXCSession *getSession();
     QReadWriteLock lock;
 
 signals:

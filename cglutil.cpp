@@ -15,47 +15,52 @@ void CGLUtil::drawSphere(double radius, int lats, int longs)
     gluSphere(quadratic, radius, lats, longs);
 }
 
-void CGLUtil::drawAxis(double size, double lineLength, QColor xColor, QColor yColor, QColor zColor, bool xShow, bool yShow, bool zShow)
+void CGLUtil::drawAxis(double size, double lineLength, QColor xColor, QColor yColor, QColor zColor, bool xShow, bool yShow, bool zShow, bool arrowShow)
 {
     //x red
     if(xShow){
-        glColor3f(xColor.redF(), xColor.greenF(), xColor.blueF());
+        glColor4f(xColor.redF(), xColor.greenF(), xColor.blueF(), xColor.alphaF());
         glPushMatrix();
         glRotatef(90,0,0,-1);
         drawCylinder(0.02 * size, 0.02 * size, size * lineLength);
         glPopMatrix();
-
-        glPushMatrix();
-        glTranslatef(size * lineLength,0,0);
-        glRotatef(90,0,0,-1);
-        drawCylinder(size/15, size/128, size/5, 16, 2);
-        glPopMatrix();
+        if(arrowShow){
+            glPushMatrix();
+            glTranslatef(size * lineLength,0,0);
+            glRotatef(90,0,0,-1);
+            drawCylinder(size/15, size/128, size/5, 16, 2);
+            glPopMatrix();
+        }
     }
 
     //y green
     if(yShow){
-        glColor3f(yColor.redF(), yColor.greenF(), yColor.blueF());
+        glColor4f(yColor.redF(), yColor.greenF(), yColor.blueF(), yColor.alphaF());
         glPushMatrix();
         drawCylinder(0.02 * size, 0.02 * size, size * lineLength);
         glPopMatrix();
-        glPushMatrix();
-        glTranslatef(0,size * lineLength,0);
-        drawCylinder(size/15, size/128, size/5, 16, 2);
-        glPopMatrix();
+        if(arrowShow){
+            glPushMatrix();
+            glTranslatef(0,size * lineLength,0);
+            drawCylinder(size/15, size/128, size/5, 16, 2);
+            glPopMatrix();
+        }
     }
 
     //z blue
     if(zShow){
-        glColor3f(zColor.redF(), zColor.greenF(), zColor.blueF());
+        glColor4f(zColor.redF(), zColor.greenF(), zColor.blueF(), zColor.alphaF());
         glPushMatrix();
         glRotatef(90, 1, 0, 0);
         drawCylinder(0.02 * size, 0.02 * size, size * lineLength);
         glPopMatrix();
-        glPushMatrix();
-        glTranslatef(0,0,size * lineLength);
-        glRotatef(90, 1, 0, 0);
-        drawCylinder(size/15, size/128, size/5,16,2);
-        glPopMatrix();
+        if(arrowShow){
+            glPushMatrix();
+            glTranslatef(0,0,size * lineLength);
+            glRotatef(90, 1, 0, 0);
+            drawCylinder(size/15, size/128, size/5,16,2);
+            glPopMatrix();
+        }
     }
     //
     glColor3f(1.0,1.0,1.0);

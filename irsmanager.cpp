@@ -103,6 +103,11 @@ PXCSenseManager* IRSManager::getSenseManager()
     return senseManager;
 }
 
+PXCSession *IRSManager::getSession()
+{
+    return session;
+}
+
 void IRSManager::run()
 {
     isStop = false;

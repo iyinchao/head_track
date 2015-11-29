@@ -5,10 +5,11 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    ui->setupUi(this);
+
     manager = &IRSManager::getInstance();
     handler = new IRSHandlerHE(ui->gb_ctrl);
 
-    ui->setupUi(this);
     colorView = new IRSRenderer2D(0, ui->w_center);
     ui->l_tab2D->addWidget(colorView, 0, 0, 1, 1);
     colorView->setHandler(handler);

@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui opengl
+QT       += core gui opengl uitools
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,7 +29,8 @@ HEADERS  += mainwindow.h \
     render_handler/irshandlerhe.h \
     cglutil.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    handlerhe.ui
 
 INCLUDEPATH += $(RSSDK_DIR)/include
 INCLUDEPATH += $(RSSDK_DIR)/sample/common/include
@@ -74,6 +75,9 @@ CONFIG(release, debug|release) {
 
 QMAKE_LFLAGS_DEBUG += /NODEFAULTLIB:libcmtd
 LIBS += "C:\Program Files (x86)\Windows Kits\8.0\Lib\win8\um\x64\AdvAPI32.Lib"
+
+RESOURCES += \
+    resources.qrc
 
 
 

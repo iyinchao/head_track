@@ -12,7 +12,7 @@ class CGLUtil
 public:
     CGLUtil();
     static void drawSphere(double radius, int lats = 128, int longs = 64);
-    static void drawAxis(double size, double lineLength = 1, QColor xColor = QColor(255, 0, 0), QColor yColor = QColor(0, 255, 0), QColor zColor = QColor(0, 0, 255), bool xShow = true, bool yShow = true, bool zShow = true);
+    static void drawAxis(double size, double lineLength = 1, QColor xColor = QColor(255, 0, 0), QColor yColor = QColor(0, 255, 0), QColor zColor = QColor(0, 0, 255), bool xShow = true, bool yShow = true, bool zShow = true, bool arrowShow = true);
     static void drawCube(double size);
     static void drawBox(double length, double width, double height);
     static void drawWiredPlane(double length, double width, int divideL = 20, int divideW = 20);

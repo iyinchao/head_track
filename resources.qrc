@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/forms">
+        <file alias="handlerHE">handlerhe.ui</file>
+    </qresource>
+</RCC>

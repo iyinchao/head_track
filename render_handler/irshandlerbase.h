@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QOpenGLWidget>
+#include <QtUiTools>
 #include "../irsmanager.h"
 #include "../irsrenderer2d.h"
 #include "../irsrenderer3d.h"
@@ -14,6 +15,8 @@ public:
     explicit IRSHandlerBase(QWidget *parent = 0);
     void addView2D(int id, IRSRenderer2D *view);
     void addView3D(int id, IRSRenderer3D *view);
+    PXCPoint3DF32 convertQtIRS(const QVector3D &qtVector);
+    QVector3D convertQtIRS(const PXCPoint3DF32 &irsVector);
 
 public slots:
     virtual void paint2D(int targetID, QPainter *painter, QPaintEvent *event);
